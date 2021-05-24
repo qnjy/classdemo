@@ -1,0 +1,11 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/testspring-boot?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+    username: root
+    password: qwer1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  jpa:
+    show-sql: true   #打印sql
+    hibernate:
+      ddl-auto: update   #创建数据库的方式类型

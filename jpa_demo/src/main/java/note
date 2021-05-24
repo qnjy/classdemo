@@ -1,0 +1,21 @@
+JPA:持久层规范    定义标准规则    基于JPA产品： Hibernate、OpenJPA
+    spring data ---->spring data jpa   只需要声明持久层接口
+    核心接口Repository---->CrudRepository---->PagingAndSortingRepository--->JpaRepository
+
+    1、定义持久层接口  继承 JpaRepository
+    2、编写实体对象   注意注解添加  @Entity  @Table  @Id
+    3、直接调用接口对象，find 代表查询  delete  删除  save保存或更新   count查询记录数
+    4、主键生成策略     在实体属性上标注绑定
+            @GeneratedValue : 主键生成策略  需要数据库支持
+                      GenerationType.IDENTITY ： 自增  mysql
+                      GenerationType.AUTO : 由程序自动帮助选择主键生成策略
+                      GenerationType.SEQUENCE ：序列 oracle
+                      GenerationType.TABLE : 通过一张基础数据库表完成主键自增
+    5、排序 以及 分页查询
+    6、自定义查询CRUD (利用jpa中的规范)
+    7、利用注解实现自定义sql 以及原生sql测试
+    8、利用Example自定义条件查询
+    9、JpaSpecificationExecutor实现动态查询
+    10、关联查询（jpa注解使用）
+
+

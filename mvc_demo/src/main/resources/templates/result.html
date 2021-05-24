@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--/*@thymesVar id="user" type="com.example.pojo.User"*/-->
+    <div th:each="user:${user}">
+        <span th:text="${user.name}"></span>数据提交成功！！
+        <div>
+            邮箱是：
+            <span th:text="${user.mail}"></span>
+        </div>
+    </div>
+</body>
+</html>

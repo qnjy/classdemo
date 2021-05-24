@@ -1,0 +1,45 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/testspring-boot?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+    username: root
+    password: qwer1234
+    type: com.alibaba.druid.pool.DruidDataSource
+  redis:
+#    cluster:
+#      nodes:
+#      - 192.168.245.101:6379
+#      - 192.168.245.102:6379
+#      - 192.168.245.103:6379
+    host: 192.168.245.104
+#    host: localhost
+    port: 6379
+    database: 0
+    password:
+    timeout: 3000
+    lettuce:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1ms
+    sentinel:
+      nodes: 192.168.245.104:26379,192.168.245.105:26379,192.168.245.106:26379
+      master: mymaster
+
+  thymeleaf:
+    enabled: true
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: utf-8
+    mode: HTML5
+  cache:
+    type: redis
+    #    cache-names:
+    #    jcache:
+    #      config: classpath*:ehcache.xml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    cache-enabled: true

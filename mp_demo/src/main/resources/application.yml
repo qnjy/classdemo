@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: qwer1234
+#    url: jdbc:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+#    jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+#    自定义数据源连接
+#    transcation:
+#      jdbc-url: jdbc:p6spy:mysql://127.0.0.1:3306/mybatis_plus?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=PRC
+#      driver-class: com.p6spy.engine.spy.P6SpyDriver
+#      username: root
+#      password: qwer1234
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    开启mybatis缓存
+    cache-enabled: true
+  type-enums-package: com.example.enums
+  global-config:
+    db-config:
+#      逻辑删除配置
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0

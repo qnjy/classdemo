@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--/*@thymesVar id="user" type="com.example.pojo.User"*/-->
+    <form th:action="@{/add}" th:object="${user}" method="post">
+        <div>
+            <div>
+                <span>用户名:</span>
+                <span><input type="text" th:field="*{name}"/></span>
+                <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">名字错误</span>
+            </div>
+            <div>
+                <span>邮箱:</span>
+                <span><input type="text" th:field="*{mail}"/></span>
+                <span th:if="${#fields.hasErrors('mail')}" th:errors="*{mail}">邮箱错误</span>
+            </div>
+            <div>
+                <span>密码:</span>
+                <span><input type="text" th:field="*{password}"/></span>
+                <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">名字错误</span>
+            </div>
+            <div>
+                <span><button type="submit">提交</button></span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
